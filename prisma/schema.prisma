@@ -100,3 +100,31 @@ model OrgSubscription {
   stripePriceId        String? @map(name: "stripe_price_id")
   stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
 }
+
+
+
+model Form {
+  id          Int      @id @default(autoincrement())
+  userId      String
+  createdAt   DateTime @default(now())
+  published   Boolean  @default(false)
+  name        String
+  description String   @default("")
+  content     String   @default("[]")
+
+  visits      Int @default(0)
+  submissions Int @default(0)
+
+  @@unique([name, userId])
+}
+
+model FormSubmission {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  formId    Int
+  content   String
+
+  @@index([formId])
+}
+
+// Prisma hook to generate UUID for shareURL before creating a new Form

@@ -76,8 +76,8 @@ export const NavItem = ({
       <AccordionTrigger
         onClick={() => onExpand(organization.id)}
         className={cn(
-          "flex items-center gap-x-2 p-1.5 text-neutral-700 rounded-md hover:bg-neutral-500/10 transition text-start no-underline hover:no-underline",
-          isActive && !isExpanded && "bg-sky-500/10 text-sky-700"
+          "flex items-center gap-x-2 p-1.5 text-neutral-700  dark:text-neutral-200 rounded-md hover:bg-neutral-500/10 transition text-start no-underline hover:no-underline",
+          isActive && !isExpanded && "bg-sky-500/10  text-sky-700"
         )}
       >
         <div className="flex items-center gap-x-2">
@@ -94,15 +94,15 @@ export const NavItem = ({
           </span>
         </div>
       </AccordionTrigger>
-      <AccordionContent className="pt-1 text-neutral-700">
+      <AccordionContent className="pt-1 text-neutral-700  dark:text-slate-300">
         {routes.map((route) => (
           <Button
             key={route.href}
             size="sm"
             onClick={() => onClick(route.href)}
             className={cn(
-              "w-full font-normal justify-start pl-10 mb-1",
-              pathname === route.href && "bg-sky-500/10 text-sky-700"
+              "w-full font-normal justify-start pl-10 mb-1  dark:bg-neutral-700",
+              pathname === route.href && "bg-sky-500/10 text-sky-500"
             )}
             variant="ghost"
           >

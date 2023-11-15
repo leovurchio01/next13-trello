@@ -69,6 +69,14 @@ body,
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
+    
+    /* Additional Dark Mode Customizations */
+    --code-background: 0 0% 6%; /* Custom color for code background */
+    --code-foreground: 0 0% 80%; /* Custom color for code text */
+
+    /* Add more customizations as needed */
+
+    /* Apply the dark mode styles to the body */
   }
 }
  
